@@ -19,7 +19,7 @@ class Constants:
     reset_key = K_z
 
     # cell
-    cell_size = 1
+    cell_size = 2
     cell_color = Colors.blue
     cell_rect = Rect(0, 0, cell_size, cell_size)
 
@@ -29,7 +29,7 @@ class Constants:
     
     # patterns
     patterns_by_id: dict[int, Callable] = {
-        0: lambda i, j : int(i % 40 == 0 or j % 40 == 0),
+        0: lambda i, j : int(i % 20 == 0 or j % 20 == 0),
         1: lambda i, j : int(i % 33 == 0 or j % 33 == 0),
-        2: lambda i, j : int(j % 42 == 0 or i % 3 == 0)
+        2: lambda i, j : int(i % 42 == 0)
     }

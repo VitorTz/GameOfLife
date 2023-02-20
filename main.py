@@ -54,9 +54,9 @@ def apply_rules(gen: list[list[int]], next: list[list[int]], lines: int, columns
                         alive_neighbors += 1
 
                 status = cell
-                if status and alive_neighbors < 2 or status and alive_neighbors > 3:
+                if status and alive_neighbors < 2 or status and alive_neighbors >= 3:
                     status = 0
-                elif not status and alive_neighbors == 3:
+                elif not status and alive_neighbors in (1,2):
                     status = 1
                 
                 next[i][j] = status
