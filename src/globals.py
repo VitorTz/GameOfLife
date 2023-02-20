@@ -20,7 +20,7 @@ class Globals:
     next_generation: list[list[int]] = None
 
     # patterns
-    pattern_id = 0
+    pattern_id = 1
 
     # texts (late init)
     text_num_generation: Text = None

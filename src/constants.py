@@ -1,4 +1,5 @@
-from pygame import K_SPACE, K_z, Rect
+from pygame import K_SPACE, K_z, Rect, K_s
+from pathlib import Path
 from src.colors import Colors
 from typing import Callable
 
@@ -16,10 +17,11 @@ class Constants:
 
     # keys
     pause_key: int = K_SPACE
-    reset_key = K_z
+    reset_key: int = K_z
+    screenshot_key: int = K_s
 
     # cell
-    cell_size = 2
+    cell_size = 1
     cell_color = Colors.blue
     cell_rect = Rect(0, 0, cell_size, cell_size)
 
@@ -33,3 +35,6 @@ class Constants:
         1: lambda i, j : int(i % 33 == 0 or j % 33 == 0),
         2: lambda i, j : int(i % 42 == 0)
     }
+
+    # save screenshot
+    screenshot_dir = Path("screenshot")

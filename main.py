@@ -1,6 +1,7 @@
 from typing import Callable
 from src.constants import Constants
 from src.globals import Globals
+from src.screenshot import take_screenshot
 from sys import exit
 from numba import njit
 import numpy as np
@@ -25,6 +26,8 @@ def check_events() -> None:
         elif e.type == pygame.KEYDOWN:
             if e.key == Constants.pause_key:
                 Globals.is_running = not Globals.is_running
+            elif e.key == Constants.screenshot_key:
+                take_screenshot(Globals.generation)
             elif e.key == Constants.reset_key:
                 reset()
                 
@@ -54,9 +57,9 @@ def apply_rules(gen: list[list[int]], next: list[list[int]], lines: int, columns
                         alive_neighbors += 1
 
                 status = cell
-                if status and alive_neighbors < 2 or status and alive_neighbors >= 3:
+                if status and alive_neighbors < 2 or status and alive_neighbors > 3:
                     status = 0
-                elif not status and alive_neighbors in (1,2):
+                elif not status and alive_neighbors == 3:
                     status = 1
                 
                 next[i][j] = status
