@@ -1,4 +1,6 @@
-from src.text import Text
+from typing import Callable
+from src.constants import Constants
+import numpy as np
 import pygame
 
 
@@ -9,11 +11,21 @@ class Globals:
     display: pygame.Surface = None
 
     # keyboard
-    keys: set[int] = set()
+    digits: dict[int, int] = {
+        pygame.K_1: 1,
+        pygame.K_2: 2,
+        pygame.K_3: 3,
+        pygame.K_4: 4,
+        pygame.K_5: 5,
+        pygame.K_6: 6,
+        pygame.K_7: 7,
+        pygame.K_8: 8,
+        pygame.K_9: 9,
+    }
 
     # game status
     is_running = False
-    num_generations: int = 0
+    window_frames: int = 0
     
     # generations
     generation: list[list[int]] = None
@@ -22,8 +34,10 @@ class Globals:
     # patterns
     pattern_id = 1
 
-    # texts (late init)
-    text_num_generation: Text = None
-    text_pause_resume: Text = None
-    text_reset: Text = None
+    @staticmethod
+    def reset_globals() -> None:
+        pattern: Callable = Constants.patterns_by_id[Globals.pattern_id]
+        Globals.is_running = False
+        Globals.generation = np.array([[pattern(i, j) for j in range(Constants.grid_columns)] for i in range(Constants.grid_lines)])
+        Globals.next_generation = np.array([[pattern(i, j) for j in range(Constants.grid_columns)] for i in range(Constants.grid_lines)])
 
