@@ -15,6 +15,8 @@ def take_screenshot(image: list[list[int]]) -> None:
                 img.putpixel((j, i), value=Constants.cell_color)
     
     image_name = f"screenshot_{asctime()}.png"
+    if not Constants.screenshot_dir.exists():
+        Constants.screenshot_dir.mkdir()
     f_name = Constants.screenshot_dir / image_name
     img.save(f_name, bitmap_format='png')
 

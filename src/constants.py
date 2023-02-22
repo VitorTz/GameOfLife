@@ -47,7 +47,7 @@ class Constants:
     }
 
     # save screenshot
-    screenshot_dir = Path("screenshot")
+    screenshot_dir = Path("screenshots")
     screenshot_saved_warning = Path("res/screenshot_saved.png")
     screenshot_saved_warning_pos = (515, 656)
 
