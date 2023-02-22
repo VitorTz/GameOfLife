@@ -41,20 +41,20 @@ As células são atualizadas simultaneamente em cada etapa do jogo. As regras si
 
 #### Padrão 1
 
-![](screenshots/screenshot_Mon%20Feb%2020%2017:13:37%202023.png)
+![](res/padroes/screenshot_Wed Feb 22 11:07:59 2023.png)
 
 #### Padrão 2
 
-![](screenshots/screenshot_Mon%20Feb%2020%2017:13:53%202023.png)
+![](res/padroes/screenshot_Wed Feb 22 11:08:13 2023.png)
 
 #### Padrão 3
 
-![](screenshots/screenshot_Mon%20Feb%2020%2017:15:41%202023.png)
+![](res/padroes/screenshot_Wed Feb 22 11:10:26 2023.png)
 
 #### Padrão 4
 
-![](screenshots/screenshot_Mon%20Feb%2020%2017:16:13%202023.png)
+![](res/padroes/screenshot_Wed Feb 22 11:10:35 2023.png)
 
 #### Padrão 5
 
-![](screenshots/screenshot_Mon%20Feb%2020%2017:16:33%202023.png)
+![](res/padroes/screenshot_Wed Feb 22 11:10:41 2023.png)
