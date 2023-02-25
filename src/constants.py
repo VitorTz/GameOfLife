@@ -5,7 +5,6 @@ from src.colors import Colors
 from typing import Callable
 
 
-
 class Constants:
 
 
@@ -26,7 +25,7 @@ class Constants:
 
     # cell
     cell_size = 1
-    cell_color = Colors.blue
+    cell_color = Colors.red
     cell_rect = Rect(0, 0, cell_size, cell_size)
 
     # grid
@@ -37,13 +36,13 @@ class Constants:
     patterns_by_id: dict[int, Callable] = {
         1: lambda i, j : int(i % 20 == 0 or j % 20 == 0),
         2: lambda i, j : int(i % 33 == 0 or j % 33 == 0),
-        3: lambda i, j : int(i % 42 == 0),
+        3: lambda i, j : int(i % 20 == 0),
         4: lambda i, j : int(i % 60 == 0 or j % 60 == 0),
         5: lambda i, j : int(is_prime(Constants.grid_columns * i + (j+1))),
-        6: lambda i, j : int(0),
-        7: lambda i, j : int(i % 42 == 0),
-        8: lambda i, j : int(i % 42 == 0),
-        9: lambda i, j : int(i % 42 == 0)
+        6: lambda i, j : int(is_prime(i + j)),
+        7: lambda i, j : int(is_prime(i + j) or (i % 60 == 0 or j % 60 == 0)),
+        8: lambda i, j : int((i % 33 == 0 or j % 33 == 0) or (i % 60 == 0 or j % 60 == 0)),
+        9: lambda i, j : int((i % 33 == 0 or j % 33 == 0) or (i % 60 == 0 or j % 60 == 0) or (i % 20 == 0 or j % 20 == 0))
     }
 
     # save screenshot
