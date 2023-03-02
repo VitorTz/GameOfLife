@@ -17,6 +17,7 @@ Cada uma das células no array pode estar viva ou morta. Em cada etapa do jogo, 
 ~~~python
 llvmlite==0.39.1
 numba==0.56.4
+numpy==1.23.5
 Pillow==9.4.0
 pygame==2.1.3
 ~~~

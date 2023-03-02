@@ -1,6 +1,6 @@
 from src.constants import Constants
 from src.globals import Globals
-from src.my_math import apply_rules
+from src.numba_otimization import apply_rules
 import pygame
 
 LiveCells = list[tuple[int, int]]

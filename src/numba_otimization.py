@@ -39,6 +39,7 @@ def apply_rules(
                     next[i][j] = neighbors == 3
     return alive_cells
 
+
 @njit(fastmath=True)
 def is_prime(n: int) -> bool:
     """Retorna True se n for primo, falso caso contrário."""

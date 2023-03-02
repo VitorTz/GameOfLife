@@ -1,8 +1,14 @@
 from pygame import K_SPACE, K_z, Rect, K_s
-from src.my_math import is_prime
-from pathlib import Path
-from src.colors import Colors
+from src.numba_otimization import is_prime
 from typing import Callable
+from pathlib import Path
+
+
+class Colors:
+
+
+    grey = (30, 34, 39)
+    red = (226, 31, 44)
 
 
 class Constants:
@@ -47,8 +53,8 @@ class Constants:
 
     # save screenshot
     screenshot_dir = Path("screenshots")
-    screenshot_saved_warning = Path("res/screenshot_saved.png")
-    screenshot_saved_warning_pos = (515, 656)
+    notification_screenshot_saved = Path("res/screenshot_saved.png")
+    notification_screenshot_saved_pos = (515, 656)
 
     # images
     menu_image_path = Path("res/menu.png")
