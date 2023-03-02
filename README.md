@@ -9,52 +9,74 @@ Cada uma das células no array pode estar viva ou morta. Em cada etapa do jogo, 
 3. Uma célula viva com mais de três vizinhos vivos morre de superpopulação.
 4. Uma célula morta com exatamente três vizinhos vivos se torna viva.
 
-As células são atualizadas simultaneamente em cada etapa do jogo. As regras simples de evolução levam a uma grande variedade de padrões complexos, incluindo estruturas estáveis, osciladores e naves espaciais.
 
 ---
 
-> Execute o arquivo main.py para jogar.
-> 
-> Requirements:
-> 
-> - llvmlite==0.39.1
-> 
-> - numba==0.56.4
-> 
-> - Pillow==9.4.0
-> 
-> - pygame==2.1.3
+# Requirements
 
-# Implementação
+~~~python
+llvmlite==0.39.1
+numba==0.56.4
+Pillow==9.4.0
+pygame==2.1.3
+~~~
 
- Alem da lógica de próxima geração e visualiação das células em uma janela gráfica, a possibilidade de salvar uma captura de tela e pausar/resetar o jogo também foram implementadas. 
 
-# Otimização
+~~~python
+pip install -r requirements.txt
+~~~
 
-    As bibliotecas **numba**  e **numby** foram utilizadas para melhorar a performance do jogo, com elas é possível utilizar um grid com 720 linhas e 1280 colunas (921.600 células) e obter resultados satisfatórios de processamento.
 
-# Padrões
+# Funcionamento
+ 
+Este programa implementa o Jogo da Vida em um array bidimensional de tamanho `1280x720` onde cada célula tem 1 de largura e altura. Ao todo, o programa disponibiliza 9 padrões pré-definidos para preencher inicialmente o grid, após preencher o grid, é possível visualizar a evolução das células. As bibliotecas `numpy` e `numba` foram utilizadas na otimização da solução e o `pygame` foi utilizado para a visualização da evolução das células.
 
-    Ao todo, 9 padrões estão disponíveis para esta implementação, eles podem ser selecionados apertando as teclas 1 à 9 no teclado. 
+ > Pressione `s` para tirar uma captura de tela, as capturas serão salvas na pasta `screenshots` dentro da pasta principal do programa.
+ >
+ > Pressione `z` para reiniciar o padrão.
+ >
+ > Pressione os digitos `1 a 9` para escolher o padrão.
+ >
+ > Pressione `space` para pausar/iniciar a execução do padrão.
+ >
+ >Execute o arquivo `main.py` para jogar.
 
-### Exemplos dos padrões após algumas gerações
+# Padrões após algumas gerações
 
-#### Padrão 1
 
-![](res/padroes/1.png)
+#### 1
 
-#### Padrão 2
+![](res/padroes/01.png)
 
-![](res/padroes/2.png)
+#### 2
 
-#### Padrão 3
+![](res/padroes/02.png)
 
-![](res/padroes/3.png)
+#### 3
 
-#### Padrão 4
+![](res/padroes/03.png)
 
-![](res/padroes/4.png)
+#### 4
 
-#### Padrão 5
+![](res/padroes/04.png)
 
-![](res/padroes/5.png)
+#### 5
+
+![](res/padroes/05.png)
+
+#### 6
+
+![](res/padroes/06.png)
+
+
+#### 7
+
+![](res/padroes/07.png)
+
+#### 8
+
+![](res/padroes/08.png)
+
+#### 9
+
+![](res/padroes/09.png)

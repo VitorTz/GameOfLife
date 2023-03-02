@@ -10,11 +10,12 @@ import pygame
 class Menu:
 
     """
-        O menu é apenas uma imagem com informações.
+        O menu é apenas uma imagem com informações 
+        sobre o funcionamento do jogo.
     """
     
-    __menu_img: Image
-    __pattern_img: Image
+    __menu_img: Image  # Imagem que representa o menu
+    __pattern_img: Image  # Imagem que diz para o usuário o número do padrão sendo exibido
 
     def __init__(self) -> None:
         self.reset()
@@ -27,7 +28,7 @@ class Menu:
             Constants.patterns_image_path[Globals.pattern_id], Constants.pattern_image_pos
         )
 
-    def draw_menu_img(self) -> None:
+    def draw_menu(self) -> None:
         if not Globals.is_running:
             self.__menu_img.draw()
             self.__pattern_img.draw()

@@ -22,7 +22,7 @@ def main() -> None:
         Globals.window_frames += 1
         menu.check_events()
         game_of_live.evolve()
-        menu.draw_menu_img()
+        menu.draw_menu()
         pygame.display.update()
 
 

@@ -8,22 +8,22 @@ def apply_rules(
     grid_lines: int, 
     grid_columns: int,
     is_running: bool
-) -> None:
+) -> list[tuple[int, int]]:
     """
-        Any live cell with fewer than two live neighbours dies (referred to as underpopulation).
-        Any live cell with more than three live neighbours dies (referred to as overpopulation).
-        Any live cell with two or three live neighbours lives, unchanged, to the next generation.
-        Any dead cell with exactly three live neighbours comes to life.
+        1 - Any live cell with fewer than two live neighbours dies (referred to as underpopulation).
+        2 - Any live cell with more than three live neighbours dies (referred to as overpopulation).
+        3 - Any live cell with two or three live neighbours lives, unchanged, to the next generation.
+        4 - Any dead cell with exactly three live neighbours comes to life.
     """
-    live_cells = []
+    alive_cells = []
     for i, line in enumerate(gen):
         for j, cell in enumerate(line):
             
             if cell:
-                live_cells.append((i, j))
+                alive_cells.append((i, j))
 
-            # count neighbors
             if is_running:
+                # count neighbors
                 neighbors = 0
                 pos = ((i,j+1), (i,j-1), (i-1,j), (i+1,j), (i+1,j+1), (i+1,j-1), (i-1,j-1), (i-1,j+1))
                 for x, y in pos:
@@ -37,10 +37,7 @@ def apply_rules(
                     next[i][j] = neighbors == 2 or neighbors == 3
                 else:
                     next[i][j] = neighbors == 3
-                
-    
-    return live_cells
-
+    return alive_cells
 
 @njit(fastmath=True)
 def is_prime(n: int) -> bool:
