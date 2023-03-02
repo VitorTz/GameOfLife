@@ -1,7 +1,7 @@
-from pygame import K_SPACE, K_z, Rect, K_s
 from src.numba_otimization import is_prime
 from typing import Callable
 from pathlib import Path
+import pygame
 
 
 class Colors:
@@ -22,9 +22,20 @@ class Constants:
     window_bg_color = Colors.grey
 
     # keys
-    pause_key: int = K_SPACE
-    reset_key: int = K_z
-    screenshot_key: int = K_s
+    pause_key: int = pygame.K_SPACE
+    reset_key: int = pygame.K_z
+    screenshot_key: int = pygame.K_s
+    digits: dict[int, int] = {
+        pygame.K_1: 1,
+        pygame.K_2: 2,
+        pygame.K_3: 3,
+        pygame.K_4: 4,
+        pygame.K_5: 5,
+        pygame.K_6: 6,
+        pygame.K_7: 7,
+        pygame.K_8: 8,
+        pygame.K_9: 9,
+    }
 
     # font
     font = Path("res/JetBrainsMono-Regular.ttf")
@@ -32,7 +43,7 @@ class Constants:
     # cell
     cell_size = 1
     cell_color = Colors.red
-    cell_rect = Rect(0, 0, cell_size, cell_size)
+    cell_rect = pygame.Rect(0, 0, cell_size, cell_size)
 
     # grid
     grid_lines = window_height // cell_size

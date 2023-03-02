@@ -15,8 +15,8 @@ def change_game_status() -> None:
 
 
 def handle_keyboard(menu: Menu, key: int) -> None:
-    if key in Globals.digits:
-        return change_pattern(menu, Globals.digits[key])
+    if key in Constants.digits:
+        return change_pattern(menu, Constants.digits[key])
     func = {
         Constants.pause_key: lambda : change_game_status(),
         Constants.screenshot_key: lambda : take_screenshot(Globals.generation),
